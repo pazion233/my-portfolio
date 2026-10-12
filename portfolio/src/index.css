@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Warm charcoal, never pure black or grey. One accent: ember orange. */
+    --background: 30 9% 8%;
+    --foreground: 36 20% 94%;
+    --card: 30 8% 10.5%;
+    --card-foreground: 36 20% 94%;
+    --popover: 30 8% 10.5%;
+    --popover-foreground: 36 20% 94%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 30 9% 8%; /* dark on orange: ~7:1, white would be 2.8:1 */
+    --secondary: 30 6% 15%;
+    --secondary-foreground: 36 20% 94%;
+    --muted: 30 6% 15%;
+    --muted-foreground: 30 6% 66%;
+    --accent: 25 95% 53%;
+    --accent-foreground: 30 9% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 30 6% 17%;
+    --input: 30 6% 17%;
+    --ring: 25 95% 53%;
+    --radius: 0.75rem;
+  }
+
+  html { scroll-behavior: smooth; scroll-padding-top: 5rem; }
+  * { @apply border-border; }
+  body {
+    @apply bg-background font-sans text-foreground antialiased selection:bg-[#F97316]/30;
+    overflow-x: hidden;
+    text-rendering: optimizeLegibility;
+  }
+  h1, h2, h3 { text-wrap: balance; }
+  p { text-wrap: pretty; }
+  :focus-visible { outline: 2px solid hsl(var(--ring)); outline-offset: 3px; border-radius: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+.loader {
+  width: 44px; height: 44px; display: inline-block; box-sizing: border-box;
+  border: 3px solid rgba(249, 115, 22, 0.2); border-top-color: #F97316; border-radius: 50%;
+  animation: rotation 1s linear infinite;
+}
+@keyframes rotation { to { transform: rotate(360deg); } }
+
+.glass-panel {
+  background: rgba(23, 21, 19, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.glass-panel-glow {
+  background: rgba(23, 21, 19, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(249, 115, 22, 0.35);
+}
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #0f0e0d; }
+::-webkit-scrollbar-thumb { background: #3a3632; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #F97316; }

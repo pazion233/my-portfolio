@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23F97316' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='m18 16 4-4-4-4'/><path d='m6 8-4 4 4 4'/><path d='m14.5 4-5 16'/></svg>" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beza Alehegn — Information Systems & Full-Stack Developer</title>
+  <meta name="description"
+    content="Portfolio of Beza Alehegn, Information Systems Student at Bahir Dar University. Bridging business needs with modern technology and interactive 3D web experiences." />
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <meta name="theme-color" content="#171513" />
+  <meta property="og:title" content="Beza Alehegn — Information Systems & Full-Stack Developer" />
+  <meta property="og:type" content="website" />
+</head>
+
+<body class="bg-background text-foreground antialiased">
+  <noscript>
+    <div style="padding:2rem; font-family:Arial,sans-serif; color:#fff; background:#111827; min-height:100vh; display:flex; align-items:center; justify-content:center; text-align:center;">
+      JavaScript is required to load this portfolio.
+    </div>
+  </noscript>
+
+  <script>
+    (function () {
+      var path = window.location.pathname || '';
+      var isInDist = path.indexOf('/dist/') !== -1 || /(^|\/)dist\/index\.html$/i.test(path);
+      var port = window.location.port;
+      var isStaticServer = port === '5500' || port === '5501' || window.location.protocol === 'file:';
+
+      if (isStaticServer && !isInDist) {
+        window.location.replace('./dist/index.html');
+      }
+    })();
+  </script>
+
+  <div id="root"></div>
+  <script type="module" src="/src/main.tsx"></script>
+</body>
+
+</html>
